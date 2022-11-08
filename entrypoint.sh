@@ -2,7 +2,8 @@
 
 function updateGame() {
     echo "Updating game..."
-    steamcmd +force_install_dir ${SERVER_DIR} +login ${STEAM_CMD_USER} +app_update ${APP_ID} ${EXTRA_UPDATE_ARGS} +quit
+    echo "Logging in as anonymous"
+    steamcmd +force_install_dir ${SERVER_DIR} +login ${STEAM_CMD_USER} +app_update ${APP_ID} +quit
 }
 
 function startGame() {

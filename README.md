@@ -17,6 +17,8 @@ docker run -d -P \\
 ```  
   
 ### Environment  
+
+Simply create a `.env` file in this directory and add `STEAM_CMD_USER` and `APP_ID`
   
 | Variable | Description | Default |
 | --- | --- | --- |

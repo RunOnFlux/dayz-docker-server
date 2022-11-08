@@ -33,15 +33,15 @@ RUN chown -R dayz:dayz ${BASE_DIR} && \
     chown -R :dayz /usr/bin/steamcmd
 
 # game
-EXPOSE 2302/udp
-EXPOSE 2303/udp
-EXPOSE 2304/udp
-EXPOSE 2305/udp
+#EXPOSE 2302/udp
+#EXPOSE 2303/udp
+#EXPOSE 2304/udp
+#EXPOSE 2305/udp
 # steam
-EXPOSE 8766/udp
-EXPOSE 27016/udp
+#EXPOSE 8766/udp
+#EXPOSE 27016/udp
 # rcon (preferred)
-EXPOSE 2310
+#EXPOSE 2310
 
 WORKDIR ${BASE_DIR}
 VOLUME ${BASE_DIR}
@@ -51,7 +51,7 @@ USER dayz
 RUN steamcmd +quit
 
 # currently linux server is experimental only
-ENV APP_ID="1042420"
+#ENV APP_ID="223350"
 
 # reset cmd & define entrypoint
 CMD [ "start" ]
