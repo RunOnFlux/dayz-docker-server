@@ -17,20 +17,20 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # steam cmd and directory conf
-ENV USER dayz
+ENV USER root
 ENV BASE_DIR /dayz
 ENV HOME ${BASE_DIR}/home
 ENV SERVER_DIR ${BASE_DIR}/server
 
 # base dirs
 RUN mkdir -p ${BASE_DIR} && \
-    groupadd dayz && \
-    useradd -m -d ${HOME} -s /bin/bash -g dayz dayz && \
+    #groupadd dayz && \
+    #useradd -m -d ${HOME} -s /bin/bash -g dayz dayz && \
     mkdir -p ${SERVER_DIR}
 
 # permissions
-RUN chown -R dayz:dayz ${BASE_DIR} && \
-    chown -R :dayz /usr/bin/steamcmd
+#RUN chown -R dayz:dayz ${BASE_DIR} && \
+#    chown -R :dayz /usr/bin/steamcmd
 
 # game
 EXPOSE 2302/udp
@@ -51,7 +51,7 @@ USER dayz
 RUN steamcmd +quit
 
 # currently linux server is experimental only
-#ENV APP_ID="223350"
+ENV APP_ID="1042420"
 
 # reset cmd & define entrypoint
 CMD [ "start" ]
